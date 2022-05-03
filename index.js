@@ -13,10 +13,6 @@
 let milisecondsDay = 24 * 60 * 60 * 1000;
 // Dom elements
 const btn = document.getElementById("btn");
-let hoydia = Date();
-console.log(hoydia);
-//let newhoy = hoydia.toDateString();
-document.getElementById("today").value = hoydia;
 
 // Fecha de hoy en texto
 const hoyTexto = () => {
@@ -80,9 +76,9 @@ const milisecondsxDay = (milisecons) => {
 const showDaysParo = (days) => {
   const resultDiv = document.createElement("div");
   resultDiv.classList.add("info");
+  
   resultDiv.innerHTML = `<h1>${days}<h1/>`;
   document.body.appendChild(resultDiv);
-  hoyTexto();
 };
 
 // Compare range days to diferents cases
@@ -140,19 +136,6 @@ const rangeDaysCompare = (days) => {
   }
 };
 
-// dado dos JavaScriptDateobjetos,
-//¿cómo puedo obtener una lista de los días (expresados como objetos de fecha) entre esas 2 fechas?
-const getDatesBetweenDates = (startDate, endDate) => {
-  let dates = [];
-  //to avoid modifying the original date
-  const theDate = new Date(startDate);
-  while (theDate < endDate) {
-    dates = [...dates, new Date(theDate)];
-    theDate.setDate(theDate.getDate() + 1);
-  }
-  dates = [...dates, endDate];
-  return dates;
-};
 
 const getNumDaysFromNow = (num) => {
   const today = new Date();
@@ -165,3 +148,17 @@ const getNumDaysFromNow = (num) => {
 getNumDaysFromNow(30);
 
 
+
+// // dado dos JavaScriptDateobjetos,
+// //¿cómo puedo obtener una lista de los días (expresados como objetos de fecha) entre esas 2 fechas?
+// const getDatesBetweenDates = (startDate, endDate) => {
+//   let dates = [];
+//   //to avoid modifying the original date
+//   const theDate = new Date(startDate);
+//   while (theDate < endDate) {
+//     dates = [...dates, new Date(theDate)];
+//     theDate.setDate(theDate.getDate() + 1);
+//   }
+//   dates = [...dates, endDate];
+//   return dates;
+// };
