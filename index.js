@@ -11,22 +11,10 @@
 
 // var globales
 let milisecondsDay = 24 * 60 * 60 * 1000;
+let count = 0;
 // Dom elements
 const btn = document.getElementById("btn");
 
-// Fecha de hoy en texto
-const hoyTexto = () => {
-  n = new Date();
-  //console.log({ n });
-  y = n.getFullYear(); //Año
-  m = n.getMonth() + 1; //Mes
-  d = n.getDate(); //Día
-  const hoy = document.createElement('p');
-  hoy.setAttribute("id","now");
-  document.body.appendChild(hoy);
-  console.log(hoy.id);
-  document.getElementById("now").innerHTML = d + "/" + m + "/" + y;
-};
 
 // Calculate time betwen dates
 const calculate = () => {
@@ -74,9 +62,15 @@ const milisecondsxDay = (milisecons) => {
 
 // Show days paro
 const showDaysParo = (days) => {
+  if(count>0){
+    console.log('limpia');
+    let existdiv = document.getElementsByClassName('info');
+    existdiv[count].innerHTML="";
+    //existdiv[count].style.backgroundColor = "red";
+  }
+  count++;
   const resultDiv = document.createElement("div");
   resultDiv.classList.add("info");
-  
   resultDiv.innerHTML = `<h1>${days}<h1/>`;
   document.body.appendChild(resultDiv);
 };
@@ -88,28 +82,28 @@ const rangeDaysCompare = (days) => {
     case days < 360:
       alert("menos de un año");
       break;
-    case days > 360 && days < 540:
-      console.log(120);
-      showDaysParo(120);
-      break;
-    case days > 539 && days < 720:
-      console.log("Los dias de paro son:", 180);
-      showDaysParo(180);
-      break;
-    case days > 719 && days < 900:
-      console.log("Los dias de paro son: 240");
-      showDaysParo(240);
-      break;
-    case days > 899 && days < 1080:
-      console.log("Los dias de paro son: 300");
-      showDaysParo(300);
-      break;
-    case days > 1079 && days < 1260:
+      case days > 360 && days < 540:
+        console.log("Los dias de paro son:",120);
+        showDaysParo(120);
+        break;
+        case days > 539 && days < 720:
+          console.log("Los dias de paro son:", 180);
+          showDaysParo(180);
+          break;
+          case days > 719 && days < 900:
+            console.log("Los dias de paro son: 240");
+            showDaysParo(240);
+            break;
+            case days > 899 && days < 1080:
+              console.log("Los dias de paro son: 300");
+              showDaysParo(300);
+              break;
+              case days > 1079 && days < 1260:
       console.log("Los dias de paro son: 360");
       showDaysParo(360);
       break;
-    case days > 1259 && days < 1440:
-      console.log("Los dias de paro son: 420");
+      case days > 1259 && days < 1440:
+        console.log("Los dias de paro son: 420");
       showDaysParo(420);
       break;
     //console
@@ -117,48 +111,59 @@ const rangeDaysCompare = (days) => {
       console.log("Los dias de paro son: 480");
       showDaysParo(480);
       break;
-    case days > 1619 && days < 1800:
-      console.log("Los dias de paro son: 540");
-      showDaysParo(540);
-      break;
-    case days > 1799 && days < 1980:
-      console.log("Los dias de paro son: 600");
-      showDaysParo(600);
-      break;
-    case days > 1979 && days < 2160:
+      case days > 1619 && days < 1800:
+        console.log("Los dias de paro son: 540");
+        showDaysParo(540);
+        break;
+        case days > 1799 && days < 1980:
+          console.log("Los dias de paro son: 600");
+          showDaysParo(600);
+          break;
+          case days > 1979 && days < 2160:
       console.log("Los dias de paro son: 660");
       showDaysParo(660);
       break;
-    case days > 2159:
-      console.log("Los dias de paro son: 720");
+      case days > 2159:
+        console.log("Los dias de paro son: 720");
       showDaysParo(720);
       break;
   }
 };
 
+// Notas
 
-const getNumDaysFromNow = (num) => {
-  const today = new Date();
-  //console.log({ today });
-  const NumdaysFromNow = new Date();
-  NumdaysFromNow.setDate(NumdaysFromNow.getDate() + num);
-  console.log({ num }, { NumdaysFromNow });
-};
-
-getNumDaysFromNow(30);
-
-
+// const getNumDaysFromNow = (num) => {
+//   const today = new Date();
+//   //console.log({ today });
+//   const NumdaysFromNow = new Date();
+//   NumdaysFromNow.setDate(NumdaysFromNow.getDate() + num);
+//   console.log({ num }, { NumdaysFromNow });
+// };
 
 // // dado dos JavaScriptDateobjetos,
 // //¿cómo puedo obtener una lista de los días (expresados como objetos de fecha) entre esas 2 fechas?
 // const getDatesBetweenDates = (startDate, endDate) => {
-//   let dates = [];
-//   //to avoid modifying the original date
-//   const theDate = new Date(startDate);
-//   while (theDate < endDate) {
-//     dates = [...dates, new Date(theDate)];
+  //   let dates = [];
+  //   //to avoid modifying the original date
+  //   const theDate = new Date(startDate);
+  //   while (theDate < endDate) {
+    //     dates = [...dates, new Date(theDate)];
 //     theDate.setDate(theDate.getDate() + 1);
 //   }
 //   dates = [...dates, endDate];
 //   return dates;
+// };
+
+// // Fecha de hoy en texto
+// const hoyTexto = () => {
+//   n = new Date();
+//   //console.log({ n });
+//   y = n.getFullYear(); //Año
+//   m = n.getMonth() + 1; //Mes
+//   d = n.getDate(); //Día
+//   const hoy = document.createElement('p');
+//   hoy.setAttribute("id","now");
+//   document.body.appendChild(hoy);
+//   console.log(hoy.id);
+//   document.getElementById("now").innerHTML = d + "/" + m + "/" + y;
 // };

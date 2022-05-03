@@ -17,7 +17,7 @@
 .input-date {
   margin: 5px;
   padding: 5px;
-  width: 200px;
+  width: auto;
   height: 100px;
   background-color: rgb(47, 206, 255);
   display: flex;
@@ -51,7 +51,6 @@
     .container {
         display: flex;
         flex-direction: column;
-        background-color:rgb(136, 0, 255);
         justify-content: center;
       }
  }
