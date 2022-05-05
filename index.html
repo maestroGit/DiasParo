@@ -9,21 +9,27 @@
   </head>
   <body>
     <div class="colum">
-    <div class="container">
-      <div class="input-date">
-        <h1 class="label">FROM</h1>
-        <input type="date" id="startdate" value="2021-01-01" />
+      <div>
+        <p>
+          Calculate the period of entitlement to unemployment benefits in number
+          days:
+        </p>
       </div>
-      <div class="input-date">
-        <h1 class="label">TO</h1>
-        <input type="date" id="today" value="" ; />
+      <div class="container">
+        <div class="input-date">
+          <h1 class="label">FROM</h1>
+          <input type="date" id="startdate" value="" />
+        </div>
+        <div class="input-date">
+          <h1 class="label">TO</h1>
+          <input type="date" id="today" value="" ; />
+        </div>
       </div>
+      <div class="btns">
+        <button id="btn">Calculate</button>
+      </div>
+      <div class="info"></div>
     </div>
-    <div class="btns">
-      <button id="btn">Calculate</button>
-    </div>
-    <div class="info"></div>
-  </div>
     <script src="index.js"></script>
   </body>
 </html>
