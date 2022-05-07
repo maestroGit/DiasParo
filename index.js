@@ -21,8 +21,8 @@ const calculate = () => {
   // Get inputs values
   let StartDate = document.getElementById("startdate").value;
   let EndDate = document.getElementById("today").value;
-  if (EndDate == "") {
-    alert("EMPTY End date");
+  if (EndDate == "" || StartDate =="") {
+    showDaysParo('Some field is Empty');
   } else {
     //let hoy = Date.now();
     //console.log({ hoy });
@@ -80,7 +80,8 @@ const rangeDaysCompare = (days) => {
   console.log({ days });
   switch (true) {
     case days < 360:
-      alert("menos de un año");
+      //alert("menos de un año");
+      showDaysParo('Employment time was less than year');
       break;
       case days > 360 && days < 540:
         console.log("Los dias de paro son:",120);

@@ -1,16 +1,14 @@
-
-
 .colum {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color:aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: aqua;
 }
 
 .container {
   display: flex;
-  background-color:rgba(0, 204, 255, 0.608);
+  background-color: rgba(0, 204, 255, 0.608);
   justify-content: center;
 }
 
@@ -22,21 +20,42 @@
   background-color: rgb(47, 206, 255);
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   text-align: center;
 }
 
+#startdate:focus {
+  background-color:aqua;
+}
+
+#today:focus {
+  background-color: aqua;
+}
+
+#startdate,
+#today {
+  margin: 0 auto;
+  background-color: rgb(133, 230, 219);
+  width: 200px;
+  border:5px;
+  border-style:double;
+  border-color: rgb(64, 165, 243);
+  font-size: 18px;
+  font-family:montserrat;
+  color: rgb(4, 57, 248);
+}
+
 .label {
-    font-size: 25px;
-    padding:2px;
-    margin:0;
+  font-size: 25px;
+  padding: 2px;
+  margin: 0;
 }
 
 .info {
   background-color: rgb(47, 206, 255);
   display: flex;
   justify-content: center;
-  margin:0;
+  margin: 0;
 }
 
 .btns {
@@ -48,14 +67,19 @@
 
 #btn {
   background-color: rgb(47, 206, 255);
-  border-radius:20%;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
   border-color: rgb(250, 251, 251);
+  font-size: 18px;
+  font-family:montserrat;
+  color: rgb(4, 57, 248);
 }
 
 @media (max-width: 768px), handheld and (orientation: portrait) {
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
- }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
